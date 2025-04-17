@@ -21,7 +21,8 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <ul class="navbar-nav" sec:authorize='hasRole("ROLE_VENDEDOR")'> <!-- rol de vendedor -->
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.categorias}]]</a></li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li>                           
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li> 
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/carrito/listado}">[[#{plantilla.carrito}]]</a></li>
                             <li class="nav-item dropdown" sec:authorize='hasRole("ROLE_ADMIN")'> <!-- rol de admin -->
                                 <a class="nav-link dropdown-toggle" 
                                    data-bs-toggle="dropdown" 

@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>TechShop</title>
+</head>
+<body>
+<header th:replace="~{layout/plantilla :: header}"/>
+<div class="container">
+    <div class="row">
+        <div class="row row-cols-6">
+            <a th:href="@{/}" class="btn btn-primary">
+                <i class="fas fa-reply"></i> [[#{accion.regresar}]]
+            </a>
+        </div>
+        <div class="row"></div>
+        <div class="row row-cols-3">
+            <div class="card">
+                <div class="card-header text-center">
+                    Reporte Clientes
+                </div>
+                <div class="card-body">
+                    <a th:href="@{/reportes/usuarios?tipo=VPdf}" class="btn btn-primary">
+                        <i class="fas fa-eye"></i><i class="fas fa-file-pdf"></i>
+                    </a>
+                    <a th:href="@{/reportes/usuarios?tipo=Pdf}" class="btn btn-success">
+                        <i class="fas fa-download"></i><i class="fas fa-file-pdf"></i>
+                    </a>
+                    <a th:href="@{/reportes/usuarios?tipo=Xls}" class="btn btn-warning">
+                        <i class="fas fa-download"></i><i class="fas fa-file-excel"></i>
+                    </a>
+                    <a th:href="@{/reportes/usuarios?tipo=Csv}" class="btn btn-danger">
+                        <i class="fas fa-download"></i><i class="fas fa-file-csv"></i>
+                    </a>
+                </div>
+            </div>
+            
+            
